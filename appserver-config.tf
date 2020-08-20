@@ -9,7 +9,7 @@ resource "null_resource" "Webserver1_ConfigMgmt" {
       type        = "ssh"
       user        = "opc"
       host        = data.oci_core_vnic.webserver1_primaryvnic[count.index].public_ip_address
-      private_key = file(var.ssh_private_key)
+      private_key = file(var.ssh_private_key_path)
       script_path = "/home/opc/myssh.sh"
       agent       = false
       timeout     = "10m"
@@ -52,7 +52,7 @@ resource "null_resource" "Webserver1_ConfigMgmt" {
       type        = "ssh"
       user        = "opc"
       host        = data.oci_core_vnic.webserver1_primaryvnic[count.index].public_ip_address
-      private_key = file(var.ssh_private_key)
+      private_key = file(var.ssh_private_key_path)
       script_path = "/home/opc/myssh.sh"
       agent       = false
       timeout     = "10m"
@@ -66,7 +66,7 @@ resource "null_resource" "Webserver1_ConfigMgmt" {
       type        = "ssh"
       user        = "opc"
       host        = data.oci_core_vnic.webserver1_primaryvnic[count.index].public_ip_address
-      private_key = file(var.ssh_private_key)
+      private_key = file(var.ssh_private_key_path)
       script_path = "/home/opc/myssh.sh"
       agent       = false
       timeout     = "10m"
@@ -80,7 +80,7 @@ resource "null_resource" "Webserver1_ConfigMgmt" {
       type        = "ssh"
       user        = "opc"
       host        = data.oci_core_vnic.webserver1_primaryvnic[count.index].public_ip_address
-      private_key = file(var.ssh_private_key)
+      private_key = file(var.ssh_private_key_path)
       script_path = "/home/opc/myssh.sh"
       agent       = false
       timeout     = "10m"
@@ -100,7 +100,7 @@ resource "null_resource" "Webserver1_Tomcat_Build" {
       type        = "ssh"
       user        = "opc"
       host        = data.oci_core_vnic.webserver1_primaryvnic[count.index].public_ip_address
-      private_key = file(var.ssh_private_key)
+      private_key = file(var.ssh_private_key_path)
       script_path = "/home/opc/myssh.sh"
       agent       = false
       timeout     = "10m"
