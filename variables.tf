@@ -10,7 +10,10 @@ variable "region" {}
 variable "tenancy_ocid" {}
 variable "compartment_ocid" {}
 variable "ssh_public_key" {}
+<<<<<<< HEAD
 variable "ssh_private_key_path" {}
+=======
+>>>>>>> 55b3c173db7734b51d7a14caa134bb55ab386675
 
 variable "igw_display_name" {
   default = "internet-gateway"
