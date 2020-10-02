@@ -13,11 +13,8 @@ resource "null_resource" "Webserver1_ConfigMgmt" {
       type        = "ssh"
       user        = "opc"
       host        = data.oci_core_vnic.webserver1_primaryvnic[count.index].public_ip_address
-<<<<<<< HEAD
       private_key = file(var.ssh_private_key_path)
-=======
       private_key = tls_private_key.opc_key.private_key_pem
->>>>>>> 55b3c173db7734b51d7a14caa134bb55ab386675
       script_path = "/home/opc/myssh.sh"
       agent       = false
       timeout     = "10m"
