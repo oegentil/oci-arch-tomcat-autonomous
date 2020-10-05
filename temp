@@ -1,0 +1,20 @@
+sudo yum update
+sudo yum install -y tomcat
+sudo yum install -y ant
+sudo yum install -y git
+curl -L -b "oraclelicense=a" -O https://download.oracle.com/otn-pub/java/jdk/14.0.1+7/664493ef4a6946b186ff29eb326336a2/jdk-14.0.1_linux-x64_bin.rpm
+sudo yum install -y jdk-14.0.1_linux-x64_bin.rpm
+git clone https://github.com/oracle/oracle-db-examples.git
+mkdir /home/opc/ojdbc
+cd /home/opc/ojdbc/
+curl -O https://repo1.maven.org/maven2/com/oracle/database/jdbc/ojdbc10/19.6.0.0/ojdbc10-19.6.0.0.jar
+curl -O https://repo1.maven.org/maven2/com/oracle/database/jdbc/ucp/19.6.0.0/ucp-19.6.0.0.jar
+curl -O https://repo1.maven.org/maven2/com/oracle/database/jdbc/ojdbc8/19.6.0.0/ojdbc8-19.6.0.0.jar
+curl -O https://repo1.maven.org/maven2/com/oracle/database/security/osdt_core/19.6.0.0/osdt_core-19.6.0.0.jar
+curl -O https://repo1.maven.org/maven2/com/oracle/database/security/osdt_cert/19.6.0.0/osdt_cert-19.6.0.0.jar
+curl -O https://repo1.maven.org/maven2/com/oracle/database/security/oraclepki/19.6.0.0/oraclepki-19.6.0.0.jar
+
+
+sudo firewall-cmd --add-port=8080/tcp --permanent
+sudo firewall-cmd --reload
+sudo systemctl enable --now tomcat
